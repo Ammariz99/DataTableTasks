@@ -88,13 +88,7 @@ class ProductManager {
       this.getDataFromLocalStorage();
       this.setupDropdowns();
     }
-    setupDropdowns() {
-      const colHeaders = document.querySelectorAll(".tblColText");
-      colHeaders.forEach((colHeader, index) => {
-        const dropdownGenerator = new DropdownGenerator(index);
-        colHeader.appendChild(dropdownGenerator.generateDropdown());
-      });
-    }
+    
     setupEventListeners() {
       this.registerBtn.addEventListener("click", (e) => {
         e.preventDefault();
