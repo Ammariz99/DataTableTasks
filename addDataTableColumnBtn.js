@@ -28,23 +28,29 @@ class ColumnSelector {
   
       headers.forEach((header, index) => {
         const headerText = header.textContent.trim();
-        const checkbox = document.createElement("input");
-        checkbox.setAttribute("type", "checkbox");
-        checkbox.setAttribute("value", index);
-        checkbox.setAttribute("id", "column" + index);
-  
-        const label = document.createElement("label");
-        label.setAttribute("for", "column" + index);
-        label.textContent = headerText;
-  
-        const div = document.createElement("div");
-        div.classList.add("form-check");
-        div.appendChild(checkbox);
-        div.appendChild(label);
-  
-        this.form.appendChild(div);
+        const includedHeaders = ['Shipping Rates', 'Refill Limit', 'Product Location'];
+        if (includedHeaders.includes(headerText)) {
+          const checkbox = document.createElement("input");
+          checkbox.setAttribute("type", "checkbox");
+          checkbox.setAttribute("value", index);
+          checkbox.setAttribute("id", "column" + index);
+          checkbox.classList.add("custom-checkbox");
+    
+          const label = document.createElement("label");
+          label.setAttribute("for", "column" + index);
+          label.textContent = headerText;
+          label.classList.add("custom-label");
+    
+          const div = document.createElement("div");
+          div.classList.add("form-check","custom-checkbox-container");
+          div.appendChild(checkbox);
+          div.appendChild(label);
+    
+          this.form.appendChild(div);
+        }
       });
     }
+  
   
     selectColumns() {
       this.selectedColumns = [];
