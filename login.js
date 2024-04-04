@@ -1,43 +1,4 @@
-/*document.addEventListener("DOMContentLoaded", function () {
-  document
-    .getElementById("loginBtn")
-    .addEventListener("click", function (event) {
-      event.preventDefault();
 
-      var enteredUsernameEmail = document.getElementById("enterEmail").value;
-
-      var enteredPassword = document.getElementById("enterPassword").value;
-
-      var usersArray = localStorage.getItem("usersArray");
-
-      if (usersArray) {
-        usersArray = JSON.parse(usersArray);
-
-        var loginSuccessful = false;
-
-        for (var i = 0; i < usersArray.length; i++) {
-          var userData = usersArray[i];
-
-          if (
-            (enteredUsernameEmail === userData.email ||
-              enteredUsernameEmail === userData.username) &&
-            enteredPassword === userData.password
-          ) {
-            loginSuccessful = true;
-
-            break;
-          }
-        }
-
-        if (loginSuccessful) {
-          location.href = "../dataTable.html";
-        } else {
-          alert("Wrong email or password. Please try again.");
-        }
-      }
-    });
-});
-*/
 class LoginManager {
   constructor() {
     this.init();
@@ -62,7 +23,7 @@ class LoginManager {
     const loginSuccessful = this.checkCredentials(usersArray, enteredUsernameEmail, enteredPassword);
 
     if (loginSuccessful) {
-      location.href = "../dataTable.html";
+      location.href = "dataTable.html";
     } else {
       alert("Wrong email or password. Please try again.");
     }
