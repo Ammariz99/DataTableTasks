@@ -263,4 +263,4 @@ class ProductManager {
   
   //=====================================================================//
   
-  getDatafromLocalStorage();
+  new ProductManager();
