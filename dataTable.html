@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <title>Data Table</title>
+    </head>
+    <body>
+        <nav class="sidebar">
+            <div class="sidebar-top-wrapper">
+                <div class="sidebar-top">
+                    <a href="#" class="logo-wrapper">
+                        <img src="/assets/shopping-basket-01-stroke-rounded.svg"
+                            alt srcset>
+                        <span class="hide company-name">Data Table</span>
+                    </a>
+                </div>
+                <button class="expand-btn" type="button"><img
+                        src="/assets/arrow-right-double-stroke-rounded.svg"
+                        alt></button>
+            </div>
+            <div class="sidebar-link-wrapper">
+                <div class="sidebar-links">
+                    <ul>
+                        <li>
+                            <a href="#dashboard" title="Dashboard"
+                                class="tooltip">
+                                <img
+                                    src="/assets/dashboard-square-01-stroke-rounded.svg"
+                                    alt srcset>
+                                <span class="link hide">Dashboard</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="#Team" title="Team" class="tooltip">
+                                <img
+                                    src="/assets/user-multiple-02-stroke-rounded.svg"
+                                    alt srcset>
+                                <span class="link hide">Team</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="#Time" title="Time" class="tooltip">
+                                <img
+                                    src="/assets/permanent-job-stroke-rounded.svg"
+                                    alt srcset>
+                                <span class="link hide">Time Tracking</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="#Mojor Product" title="Major Product"
+                                class="tooltip">
+                                <img
+                                    src="/assets/trade-up-stroke-rounded.svg"
+                                    alt srcset>
+                                <span class="link hide">Major Product</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="#cost" title="Cost"
+                                class="tooltip">
+                                <img
+                                    src="/assets/calculate-stroke-rounded.svg"
+                                    alt srcset>
+                                <span class="link hide">Cost Calculate</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <ul>
+                    <li>
+                        <a href="login.html"><button
+                                class="logout" id="logout">Logout
+
+                            </button></a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+
+        <div class="header">
+
+            <h1>Dashboard</h1>
+
+        </div>
+
+        <div class="upper-btn-box">
+            <div class="left-box">
+                <button id="addProductBtn"><i class="fa-solid fa-plus"></i>
+                    &nbsp;Add
+                    Product</button>
+
+            </div>
+            <div class="add_Column">
+                <!--<button type="button" class="add-column" id="addColumn">
+                    Add Columns
+                </button> -->
+                <button type="button" id="addColumn"><i
+                        class="fa-solid fa-table-columns"></i>&nbsp; Add
+                    Column</button>
+                <div
+                    class="modalSelecColumn"
+                    id="addColumnModal"
+                    tabindex="-1"
+                    role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">
+                                    Select Columns to Display
+                                    <i class="fa fa-times select-cancel"></i>
+                                </h5>
+                            </div>
+                            <div class="modal-body">
+                                <form id="columnSelectionForm">
+                                    <!-- Checkbox options will be dynamically populated here -->
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button
+                                    type="button"
+                                    class="btnSelect1 btn-secondary"
+                                    data-dismiss="modal">
+                                    Cancel
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btnSelect2 btn-primary"
+                                    data-dismiss="modal"
+                                    onclick="selectColumns()">
+                                    Select
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-box">
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="table-container">
+
+                <div class="Table-container">
+                    <table class="dataTable"
+                        id="dataTable">
+                        <thead>
+                            <tr>
+                                <th class="tblColText">Select
+                                    Option</th>
+                                <th class="tblColText">ID</th>
+                                <th class="tblColText">Product Name</th>
+                                <th class="tblColText">Product Title</th>
+                                <th class="tblColText">Product Description</th>
+                                <th class="tblColText">Product Vendor</th>
+                                <th class="tblColText">In Stock</th>
+                                <th class="tblColText">Buying Price</th>
+                                <th class="tblColText">Sale Price</th>
+                                <th class="tblColText">Purchase Quantity</th>
+                                <th class="tblColText">Product Type</th>
+                                <th class="tblColText">Shipping Rates</th>
+                                <th class="tblColText">Refill Limit</th>
+                                <th class="tblColText">Product Location
+                                    Address</th>
+                                <th colspan="2" class="tblColText">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-data">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal">
+            <i class="fa-solid fa-circle-xmark close-icon"></i>
+            <div class="left-modal"></div>
+            <form id="register-form">
+                <div class="right-modal">
+                    <div class="input-box">
+                        <label for="id">Id</label>
+                        <input type="text" required id="id">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="pName">Product Name</label>
+                        <input type="text" required id="pName">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="pTitle">Product Title</label>
+                        <input type="text" required id="pTitle">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="pDescription">Product Description</label>
+                        <input type="text" required id="pDescription">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="pVendor">Product Vendor</label>
+                        <input type="text" required id="pVendor">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="inStock">In Stock</label>
+                        <input type="text" required id="inStock">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="bPrice">Buying Price</label>
+                        <input type="text" required id="bPrice">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="sPrice">Sale Price</label>
+                        <input type="text" required id="sPrice">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="pQuantity">Purchase Quantity</label>
+                        <input type="text" required id="pQuantity">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="pType">Product Type</label>
+                        <input type="text" required id="pType">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="sRates">Shipping Rates</label>
+                        <input type="text" required id="sRates">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="Rlimit">Refill Limit</label>
+                        <input type="text" required id="rLimit">
+                    </div>
+                    <div class="input-box">
+                        <label for="pLocation">Product Location Address</label>
+                        <input type="text" required id="pLocation">
+                    </div>
+                    <div class="input-box">
+                        <button id="register-btn">Register</button>
+                        <button id="update-btn"
+                            disabled="disabled">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <script src="sortDataTable.js"></script>
+        <script src="addDataTableColumnBtn.js"></script>
+        <script src="dropdown.js"></script>
+        <script src="modal.js"></script>
+
+    </body>
+</html>
