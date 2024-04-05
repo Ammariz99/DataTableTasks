@@ -398,6 +398,7 @@ body.collapsed .sidebar-links-wrapper {
     border-bottom: 1px solid #e5e5e5;
     margin-bottom: 10px;
     text-align: center;
+    margin-left: 35vh;
 }
 
 .modal-header .modal-title {
@@ -409,6 +410,7 @@ body.collapsed .sidebar-links-wrapper {
     border-top: 1px solid #e5e5e5;
     padding-top: 10px;
     margin-top: 10px;
+    margin-left: 35vh;
     text-align: center;
 
 }
@@ -417,7 +419,7 @@ body.collapsed .sidebar-links-wrapper {
     background-color: #45a049;
     color: #EFEFEF;
     font-size: 1rem;
-    width: 10%;
+    width: 40%;
     border-radius: 5px;
 }
 
@@ -425,22 +427,11 @@ body.collapsed .sidebar-links-wrapper {
     background-color: #45a049;
     color: #EFEFEF;
     font-size: 1rem;
-    width: 10%;
+    width: 40%;
     border-radius: 5px;
 }
 
-.select-cancel {
-    float: right;
-    font-size: large;
-    cursor: pointer;
-    margin-top: -5vh;
-    margin-left: 95vh;
 
-}
-
-.select-cancel:hover {
-    color: red;
-}
 
 .modal-footer .btnSelect1 btn-secondary {
     background-color: #0a8bac;

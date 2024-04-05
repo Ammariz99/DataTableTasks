@@ -21,6 +21,13 @@ class ColumnSelector {
         this.modal.style.display = "none";
         this.selectColumns();
       });
+
+      this.modal.querySelector(".btnSelect1").addEventListener("click", () => {
+        this.modal.style.display = "none";
+        
+        
+      });
+      
     }
   
     setupColumnCheckboxes() {
@@ -50,6 +57,7 @@ class ColumnSelector {
         }
       });
     }
+   
   
   
     selectColumns() {

@@ -193,7 +193,9 @@ class ProductManager {
   
       this.setupDeleteButton(); // Re-setup delete button listeners after showing data
       this.setupUpdateButton();
+      
     }
+    
   
     setupDeleteButton() {
       var allDelBtn = document.querySelectorAll(".del-btn");
